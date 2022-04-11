@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  farleystestbronyrepo:
+    container_name: farleystestbronyrepo
+    build: .
+    ports:
+      - "0.0.0.0:3001:3001"
+    # init: true
+    entrypoint: npm run start
+    restart: unless-stopped
+
+
+# this is my old docker-compose
+# commented below for reference
+# version: '3'
+# services:
+#   web:
+#     build: .
+#     ports:
+#       - "8080:8080"
+  # the db section is for if you want to also run the container with your database, in it at the same time. Rn i dont want to, so ill comment that out for now
+  # db:
+  #   image: "mysql"
+  #   environment: 
+  #     MYSQL_ROOT_PASSWORD: password
+  #   volumes:
+  #     - db-data:/foo
+
+# volumes:
+#   db-data:
