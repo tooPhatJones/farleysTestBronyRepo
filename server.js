@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
   if (req.session.page_views) {
     req.session.page_views++;
 
-    res.send("You visited this page " + req.session.page_views + " times, to decrement the counter visit <a href='http://localhost:"+port+"/session-'>http://localhost:"+port+"/session-</a>");
+    res.send("You visited this page " + req.session.page_views + " times, to decrement the counter visit <a href='http://localhost:"+port+"/-'>http://localhost:"+port+"/-</a>");
     res.end()
   } else {
     req.session.page_views = 1;
@@ -37,7 +37,7 @@ app.get('/-', function (req, res) {
     res.send("the counter has been decremented, it is now " + req.session.page_views);
   } else {
 
-    res.send("you have 0 page views, you might want to go back to <a href='http://localhost:"+port+"/session'>http://localhost:"+port+"/session</a>");
+    res.send("you have 0 page views, you might want to go back to <a href='http://localhost:"+port+"/'>http://localhost:"+port+"/</a>");
   }
 }
 );
