@@ -5,7 +5,7 @@ git pull &&
 git push &&
 sleep 4
 ssh brony-nb ' 
-    cd /srv/farleystestbronyrepo
+    cd /srv/farleysTestBronyRepo
     git pull && sleep 4
     docker-compose build --no-cache farleystestbronyrepo
     docker-compose up -d 
