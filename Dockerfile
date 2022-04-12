@@ -1,6 +1,6 @@
  # syntax=docker/dockerfile:1
 # bellow is coppied vertabit from the bloodblaze dockerfile with key changes
-FROM node:slim
+FROM node:12
 ENV PORT=3001
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install git python make g++ && rm -rf /var/cache/apk/*
