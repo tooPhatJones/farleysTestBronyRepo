@@ -8,7 +8,7 @@ ssh brony-nb '
     cd /srv/farleysTestBronyRepo
     docker stop farleysTestBronyRepo
     docker rm farleysTestBronyRepo
-    sudo git pull && sleep 4
+    sudo git pull && echo "sleeping for 4 seconds" && sleep 4
     docker-compose build --no-cache farleystestbronyrepo
     docker-compose up -d 
     docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
