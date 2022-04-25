@@ -27,7 +27,9 @@ app.all('*', (req, res, next) => {
 
 //GET home route
 app.get('/', (req, res) => {
+  let date = new Date();
    res.send('Hello World.');
+  console.log('request logged '+ date.toLocaleString())
 });
 
 var httpServer = http.createServer(app);
