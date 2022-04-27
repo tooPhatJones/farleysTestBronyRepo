@@ -18,6 +18,8 @@ FROM node:12
 
 WORKDIR /app
 
+RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get install certbot -y
 COPY package*.json ./
 
 RUN npm install
