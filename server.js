@@ -6,8 +6,8 @@ const fs = require('fs');
 const httpsPort = 3001;
 app = express()
 
-var key = fs.readFileSync(__dirname + '/rootCA.key');
-var cert = fs.readFileSync(__dirname + '/rootCA.pem');
+var key = fs.readFileSync('/etc/letsencrypt/live/www.typecheck.website-0001/privkey.pem');
+var cert = fs.readFileSync('/etc/letsencrypt/live/www.typecheck.website-0001/fullchain.pem');
 
 var credentials = {
   key: key,
