@@ -2,7 +2,7 @@ const express = require('express');
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
-const httpPort = 9999;
+//const httpPort = 9999;
 const httpsPort = 3001;
 app = express()
 
@@ -15,7 +15,6 @@ var credentials = {
 };
 //the following line is for the certbot verification step. after that I can remove it if i want. 
 app.use(express.static('static'));
-
 
 // redirect http requests to the https server.
 app.all('*', (req, res, next) => {
@@ -38,9 +37,9 @@ var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
 
-httpServer.listen(httpPort, () => {
-  console.log("Http server listing on port : " + httpPort)
-});
+//httpServer.listen(httpPort, () => {
+  //console.log("Http server listing on port : " + httpPort)
+//});
 
 httpsServer.listen(httpsPort, () => {
   console.log("Https server listing on port : " + httpsPort)
