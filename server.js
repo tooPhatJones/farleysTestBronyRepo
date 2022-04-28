@@ -14,7 +14,7 @@ var credentials = {
   cert: cert
 };
 //the following line is for the certbot verification step. after that I can remove it if i want. 
-app.use(express.static('static'));
+//.app.use(express.static('static'));
 
 // redirect http requests to the https server.
 app.all('*', (req, res, next) => {
