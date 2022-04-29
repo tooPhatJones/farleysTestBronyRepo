@@ -2,8 +2,8 @@ const express = require('express');
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
-//const httpPort = 9999;
-const httpsPort = 3001;
+const httpPort = 3001;
+//const httpsPort = 3001;
 app = express()
 
 var key = fs.readFileSync('/etc/letsencrypt/live/www.typecheck.website-0001/privkey.pem');
@@ -37,13 +37,13 @@ var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
 
-//httpServer.listen(httpPort, () => {
-  //console.log("Http server listing on port : " + httpPort)
-//});
-
-httpsServer.listen(httpsPort, () => {
-  console.log("Https server listing on port : " + httpsPort)
+httpServer.listen(httpPort, () => {
+  console.log("Http server listing on port : " + httpPort)
 });
+
+//httpsServer.listen(httpsPort, () => {
+  //console.log("Https server listing on port : " + httpsPort)
+//});
 
 
 //curl http://localhost:9999
