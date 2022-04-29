@@ -17,14 +17,14 @@ var credentials = {
 //.app.use(express.static('static'));
 
 // redirect http requests to the https server.
-app.all('*', (req, res, next) => {
-    if (req.secure) {
-      return next();
-    } else {
-        console.log(`Redirecting to: https://${req.hostname}:${httpsPort}${req.url}`);
-        res.redirect(301, `https://${req.hostname}:${httpsPort}${req.url}`);
-    }
-});
+//app.all('*', (req, res, next) => {
+    //if (req.secure) {
+      //return next();
+    //} else {
+        //console.log(`Redirecting to: https://${req.hostname}:${httpsPort}${req.url}`);
+        //res.redirect(301, `https://${req.hostname}:${httpsPort}${req.url}`);
+    //}
+//});
 
 //GET home route
 app.get('/', (req, res) => {
