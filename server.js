@@ -6,13 +6,13 @@ const httpPort = 3001;
 //const httpsPort = 3001;
 app = express()
 
-var key = fs.readFileSync('/etc/letsencrypt/live/www.typecheck.website-0001/privkey.pem');
-var cert = fs.readFileSync('/etc/letsencrypt/live/www.typecheck.website-0001/fullchain.pem');
+//var key = fs.readFileSync('/etc/letsencrypt/live/www.typecheck.website-0001/privkey.pem');
+//var cert = fs.readFileSync('/etc/letsencrypt/live/www.typecheck.website-0001/fullchain.pem');
 
-var credentials = {
-  key: key,
-  cert: cert
-};
+//var credentials = {
+  //key: key,
+  //cert: cert
+//};
 //the following line is for the certbot verification step. after that I can remove it if i want. 
 //.app.use(express.static('static'));
 
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 });
 
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
+//var httpsServer = https.createServer(credentials, app);
 
 
 httpServer.listen(httpPort, () => {
